@@ -1,0 +1,547 @@
+/* ⁅―――――――⁆ Fonts ⁅―――――――⁆ */
+
+@font-face {
+    font-family: "AXIS EXTRA BOLD";
+    src: url("../fonts/AXIS\ Extra\ Bold\ 800.otf") format("opentype");
+}
+
+/* ⁅―――――――⁆ Animations ⁅―――――――⁆ */
+
+@keyframes move-apart {
+
+	from {
+		translate: 0 0;
+	}
+
+	50% {
+		translate: 0 2vh;
+	}
+
+	to {
+		translate: 0 0;
+	}
+
+}
+
+/* ⁅―――――――⁆ Globals ⁅―――――――⁆ */
+
+:root {
+
+	--color-white: white;
+	--color-black: black;
+	--color-yellow: #FFF1E1;
+	--color-shadow: black;
+
+}
+
+html {
+
+	scroll-behavior: smooth;
+
+}
+
+body {
+
+	margin: 0;
+	font-family: "AXIS EXTRA BOLD", sans-serif;
+
+}
+
+/* ⁅―――――――⁆ Navbar ⁅―――――――⁆ */
+
+.navbar-container {
+
+	width: 100%;
+	height: 8vh;
+
+	top:0;
+	z-index: 2;
+	position: fixed;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	color: var(--color-black);
+
+}
+
+#navbar-links {
+
+	list-style: none;
+
+	display: flex;
+	flex-direction: row;
+    margin-right: 5dvh;
+	gap: 2vw;
+
+}
+
+#navbar-links a {
+
+	text-decoration: none;
+	color: var(--color-black);
+
+}
+
+#navbar-logo {
+
+	margin-left: 5dvh;
+	padding: 2vh;
+	opacity: 0;
+
+}
+
+#navbar-logo img {
+
+	height: 7vh;
+
+}
+
+.black-navbar {
+
+	background-color: var(--color-black);
+
+}
+
+.black-navbar a {
+
+	color: var(--color-yellow) !important;
+
+}
+
+.black-navbar img {
+
+	filter: invert(95%) sepia(52%) saturate(686%) hue-rotate(296deg) brightness(111%) contrast(101%);
+
+}
+
+.yellow-navbar {
+
+	background-color: var(--color-yellow);
+
+}
+
+.black-navbar > #navbar-logo,
+.yellow-navbar > #navbar-logo {
+
+	opacity: 1;
+
+}
+
+@media only screen and (max-width: 400px) {
+	
+	.navbar-container {
+
+		justify-content: center;
+
+	}
+
+	#navbar-logo {
+
+		display: none;
+
+	}
+
+	#navbar-links {
+
+		gap: 10vw;
+
+	}
+
+}
+
+/* ⁅―――――――⁆ Hero Section ⁅―――――――⁆ */
+
+#hero {
+
+	height: 100vh;
+	width: 100%;
+
+	background-image: url("../images/hero_image.webp");
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-direction: column;
+
+	box-shadow: inset 0px 0px 5vh var(--color-shadow);
+
+}
+
+#hero img {
+
+	height: 50%;
+	width: 85%;
+	aspect-ratio: 1;
+	margin-top: 4vh;
+
+}
+
+.top-half-circle {
+
+	height: 15%;
+	aspect-ratio: 2/1;
+	border-top-left-radius: 100vh;
+	border-top-right-radius: 100vh;
+
+	box-shadow: 0px 0px 5vh var(--color-shadow);
+	background: var(--color-black);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.top-half-circle a {
+
+	color: var(--color-white);
+	text-decoration: none;
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+
+	padding: 10%;
+
+}
+
+
+.top-half-circle h3 {
+
+	margin: 0;
+	margin-bottom: 1.8vh;
+
+}
+
+.top-half-circle .fa-arrow-down {
+
+	animation-name: move-apart;
+	animation-duration: 2s;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	will-change: margin-bottom;
+
+}
+
+/* ⁅―――――――⁆ Image Showcase ⁅―――――――⁆ */
+
+#image-showcase {
+
+	height: 92vh;
+	background-color: var(--color-black);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+.image-carousel {
+
+	height: min(80%, 65vw);
+
+	display: flex;
+	aspect-ratio: 1280 / 960;
+	overflow-x: hidden;
+	scroll-snap-type: x	 mandatory;
+	scroll-behavior: smooth;
+	border-radius: 0.5rem;
+
+}
+
+.image-carousel img {
+
+	flex: 1 0 100%;
+	scroll-snap-align: start;
+	object-fit: cover;
+	
+}
+
+.carousel-nav {
+
+	gap: 1vw;
+    padding: 0;
+
+	display: flex;
+	justify-content: center;
+    align-items: center;
+
+}
+
+.carousel-nav a {
+	
+	height: 2.5vh;
+	width: 2.5vh;
+	border-radius: 50%;
+	background-color: var(--color-white);
+
+	opacity: 0.75;
+	transition: opacity ease 250ms;
+
+}
+
+.carousel-nav a:hover {
+
+	cursor: pointer;
+	opacity: 1;
+
+}
+
+#image-interiar {
+	scroll-margin-top: 10vh;
+}
+
+/* ⁅―――――――⁆ Menu Section ⁅―――――――⁆ */
+
+.menu-pizzor {grid-area: pizzor;}
+.menu-hanburgare {grid-area: hanburgare;}
+.menu-boxar {grid-area: boxar;}
+.menu-rullar {grid-area: rullar;}
+.menu-tallrikar {grid-area: tallrikar;}
+.menu-sallader {grid-area: sallader;}
+.menu-pastarätter {grid-area: pastarätter;}
+
+#menu {
+
+	background-color: var(--color-yellow);
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+	'pizzor hanburgare sallader'
+    'pizzor rullar tallrikar'
+	'pizzor boxar pastarätter';
+	
+	height: fit-content;
+	padding: 1vh 5vw;
+
+	scroll-margin-top: 8vh;
+
+}
+
+#menu h2 {
+	text-align: center;
+    font-size: 3rem;
+    width: 80%;
+    margin: 0;
+    padding: 1vh;
+    letter-spacing: 1rem;
+}
+
+#menu h3 {
+	padding: 1vh;
+    background-color: black;
+    border-radius: 1vh;
+    color: var(--color-white);
+    width: 80%;
+    text-align: center;
+}
+
+#menu h4 {
+	margin: 0.5vh 0 0.5vh;
+}
+
+.menu-warning {
+	background-color: black;
+    color: var(--color-white);
+	font-family: 'Times New Roman', Times, serif;
+	font-size: larger;
+
+	border-radius: 1vh;
+	margin-top: 10%;
+	padding: 2%;
+    width: 80%;
+}
+
+#menu ul {
+	list-style: none;
+}
+
+#menu li {
+	font-family: 'Times New Roman', Times, serif;
+}
+
+@media only screen and (max-width: 1150px) {
+	
+	#menu {
+
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+		'pizzor hanburgare'
+		'pizzor rullar'
+		'pizzor sallader'
+		'boxar pastarätter'	
+		'tallrikar tallrikar';
+
+	}
+
+	.menu-tallrikar h3,
+	.menu-warning {
+		width: unset !important;
+	}
+
+	.menu-warning {
+		margin-top: 2%;
+	}
+
+	.menu-tallrikar {
+		margin-bottom: 5vh;
+	}
+
+}
+
+@media only screen and (max-width: 850px) {
+	
+	#menu {
+
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		'pizzor'
+		'tallrikar'
+		'hanburgare'
+		'boxar'
+		'rullar'
+		'sallader'
+		'pastarätter';	
+
+	}
+
+	.menu-pizzor {
+		height: unset;
+	}
+
+	.menu-tallrikar h3,
+	.menu-warning {
+		width: 80% !important;
+	}
+
+	.menu-tallrikar {
+		margin-bottom: 2vh;
+	}
+
+	.menu-pastarätter {
+		margin-bottom: 5vh;
+	}
+
+}
+
+@media only screen and (max-width: 500px) {
+	
+	#menu {
+
+		padding: 1vh 0;
+
+	}
+
+	#menu ul, #menu ol {
+		padding-left: 8vw;
+	}
+
+}
+
+/* ⁅―――――――⁆ Footer ⁅―――――――⁆ */
+
+footer {
+
+	color: var(--color-white);
+	background-color: var(--color-black);
+
+	display: flex;
+	align-items: center	;
+	flex-direction: column;
+
+	max-width: 100vw;
+
+}
+
+#contact {
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+#footer-container {
+
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+}
+
+#footer-container li {
+
+	list-style: none;
+	font-size: 0.75rem;
+
+}
+
+#footer-container h3 {
+
+	font-size: 1.75rem;
+
+}
+
+#footer-container ul {
+
+	padding: 0;
+	width: 20%;
+
+}
+
+#footer-container a {
+
+	font-size: 2rem;
+
+}
+
+#footer-copyright {
+
+	width: 100%;
+	text-align: center;
+
+}
+
+.fa-brands {
+
+	color: var(--color-yellow);
+
+}
+
+@media only screen and (max-width: 600px) {
+	
+	#footer-container {
+
+		flex-direction: column;
+		align-items: center;
+		justify-content:initial;
+
+	}
+
+	#footer-container li {
+
+		text-align: center;
+
+	}
+
+	#footer-container ul {
+
+		padding: 0;
+		width: unset;
+	
+	}
+
+	#footer-copyright {
+		margin-top: 10vh;
+	}
+
+}
